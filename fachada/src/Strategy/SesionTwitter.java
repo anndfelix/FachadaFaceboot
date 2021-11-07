@@ -4,10 +4,17 @@
  */
 package Strategy;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Andrea
  */
-public class InicioSesion {
-    
+public class SesionTwitter implements ILoginStrategy {
+
+    @Override
+    public void login() {
+      JOptionPane.showMessageDialog(null," Login desde Twitter. ");   
+    }
+
 }

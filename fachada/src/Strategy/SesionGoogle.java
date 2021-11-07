@@ -4,10 +4,17 @@
  */
 package Strategy;
 
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author Andrea
+ * @author Eli
  */
-public class TwitterStrategy {
-    
+public class SesionGoogle implements ILoginStrategy {
+
+    @Override
+    public void login() {
+        JOptionPane.showMessageDialog(null," Login desde Google. ");
+    }
+
 }
