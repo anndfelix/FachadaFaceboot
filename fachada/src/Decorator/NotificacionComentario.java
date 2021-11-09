@@ -1,19 +1,17 @@
 package Decorator;
 
 import java.time.LocalDateTime;
-import objetosNegocio.Notificacion;
-import objetosNegocio.Publicacion;
-import objetosNegocio.Usuario;
+import objetosNegocio.*;
 
 /**
  *
  * @author Andrea
  */
-public class NotificacionEtiquetado implements INotificacion {
+public class NotificacionComentario implements INotificacion {
 
     INotificacion notificacion;
 
-    public NotificacionEtiquetado(INotificacion not) {
+    public NotificacionComentario(INotificacion not) {
         notificacion = not;
     }
 
@@ -22,8 +20,8 @@ public class NotificacionEtiquetado implements INotificacion {
         System.out.println(not);
     }
 
-    public Notificacion crearNotificacion(Notificacion notificacion, Publicacion publicacion) {
-        Notificacion not = new Notificacion(notificacion.getAsunto(), notificacion.getUsuarioRemitente(), notificacion.getUsuarioDestinatario(), notificacion.getFechaHoraEnvio(), publicacion);
+    public Notificacion crearNotificacion(Notificacion notificacion, Comentario comentario) {
+        Notificacion not = new Notificacion(notificacion.getAsunto(), notificacion.getUsuarioRemitente(), notificacion.getUsuarioDestinatario(), notificacion.getFechaHoraEnvio(), comentario);
         return not;
     }
 
@@ -32,4 +30,5 @@ public class NotificacionEtiquetado implements INotificacion {
         Notificacion not = new Notificacion(asunto, remitente, destinatario, fecha);
         return not;
     }
+
 }

@@ -9,22 +9,17 @@ import objetosNegocio.Usuario;
  *
  * @author Andrea
  */
-public class NotificacionEtiquetado implements INotificacion {
+public class NotificacionDecorator implements INotificacion {
 
-    INotificacion notificacion;
+    private INotificacion notificacion;
 
-    public NotificacionEtiquetado(INotificacion not) {
-        notificacion = not;
+    public NotificacionDecorator(INotificacion notificacion) {
+        this.notificacion = notificacion;
     }
 
     @Override
     public void enviarNotificacion(Notificacion not) {
         System.out.println(not);
-    }
-
-    public Notificacion crearNotificacion(Notificacion notificacion, Publicacion publicacion) {
-        Notificacion not = new Notificacion(notificacion.getAsunto(), notificacion.getUsuarioRemitente(), notificacion.getUsuarioDestinatario(), notificacion.getFechaHoraEnvio(), publicacion);
-        return not;
     }
 
     @Override
