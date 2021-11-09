@@ -2,18 +2,16 @@ package Decorator;
 
 import java.time.LocalDateTime;
 import objetosNegocio.Notificacion;
-import objetosNegocio.Publicacion;
 import objetosNegocio.Usuario;
 
-/**
- *
- * @author Andrea
- */
 public class NotificacionDecorator implements INotificacion {
 
-    private INotificacion notificacion;
+    private Notificacion notificacion;
 
-    public NotificacionDecorator(INotificacion notificacion) {
+    public NotificacionDecorator() {
+    }
+
+    public NotificacionDecorator(Notificacion notificacion) {
         this.notificacion = notificacion;
     }
 
@@ -27,4 +25,5 @@ public class NotificacionDecorator implements INotificacion {
         Notificacion not = new Notificacion(asunto, remitente, destinatario, fecha);
         return not;
     }
+
 }
